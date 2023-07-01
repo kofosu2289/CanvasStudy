@@ -2,7 +2,6 @@ import React, { useRef, useEffect} from 'react';
 import { useSelector, useDispatch } from "react-redux"
 import { clearCanvas, drawStroke, setCanvasSize } from './utils/canvasUtils';
 import { beginStroke, endStroke, updateStroke } from './actions';
-import { RootState } from './utils/types';
 import { currentStrokeSelector } from './rootReducer';
 
 const WIDTH = 1024
