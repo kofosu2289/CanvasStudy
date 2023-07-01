@@ -1,6 +1,4 @@
 import React, { useRef, useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
 import { clearCanvas, setCanvasSize } from './utils/canvasUtils';
 
 const WIDTH = 1024
