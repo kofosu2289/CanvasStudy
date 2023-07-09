@@ -1,25 +1,20 @@
-import { RootState } from "../../utils/types"
-import { Action, undo, redo } from "./actions"
-import { endStroke } from '../sharedActions'
+import { RootState } from "../../utils/types";
+import { undo, redo } from "./actions";
+import { endStroke } from "../sharedActions";
+import { createReducer } from "@reduxjs/toolkit";
 
-export const reducer = (
-  state: RootState["historyIndex"] = 0,
-  action: Action
-) => {
-  switch (action.type) {
-    case endStroke.toString(): {
-      return 0
-    }
-    case undo.toString(): {
-      return Math.min(state + 1, action.payload)
-    }
-    case redo.toString(): {
-      return Math.max(state - 1, 0)
-    }
-    default:
-      return state
-  }
-}
+const initialState: RootState["historyIndex"] = 0;
 
-export const historyIndexSelector = (state: RootState) =>
-  state.historyIndex
+export const reducer = createReducer(initialState, (builder) => {
+  builder.addCase(undo, (state, action) => {
+    return Math.min(state + 1, action.payload);
+  });
+  builder.addCase(redo, (state) => {
+    return Math.max(state - 1, 0);
+  });
+  builder.addCase(endStroke, () => {
+    return 0;
+  });
+});
+
+export const historyIndexSelector = (state: RootState) => state.historyIndex;
