@@ -5,6 +5,11 @@ export type RootState = {
   strokes: Stroke[];
   historyIndex: number;
   visibleModal: ModalState;
+  projectsList: {
+    error?: string
+    pending: boolean
+    projects: Project[]
+  }
 };
 
 export type Stroke = {
@@ -16,3 +21,9 @@ export type Point = {
   x: number;
   y: number;
 };
+
+export type Project = {
+    image: string
+    name: string
+    id: string
+}
