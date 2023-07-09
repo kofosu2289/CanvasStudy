@@ -9,6 +9,7 @@ import { historyIndexSelector } from "./modules/historyIndex/slice";
 import { EditPanel } from "./shared/EditPanel";
 import { ColorPanel } from "./shared/ColorPanel";
 import { FilePanel } from "./shared/FilePanel";
+import { ModalLayer } from "./ModalLayer";
 import { useCanvas } from "./CanvasContext";
 
 const WIDTH = 1024;
@@ -98,6 +99,7 @@ function App() {
       <EditPanel />
       <ColorPanel />
       <FilePanel />
+      <ModalLayer />
       <canvas
         onMouseDown={startDrawing}
         onMouseUp={endDrawing}

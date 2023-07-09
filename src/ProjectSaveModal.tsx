@@ -8,6 +8,9 @@ export const ProjectSaveModal = () => {
     <div className="window modal-panel">
       <div className="title-bar">
         <div className="title-bar-text">Save</div>
+        <div className="title-bar-controls">
+          <button aria-label="Close" onClick={() => dispatch(hide())} />
+        </div>
       </div>
       <div className="window-body">
         <div className="field-row">

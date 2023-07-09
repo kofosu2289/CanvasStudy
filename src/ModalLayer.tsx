@@ -14,5 +14,7 @@ export const ModalLayer = () => {
         case "PROJECT_SAVE_MODAL": {
             return <ProjectSaveModal />
         }
+        default: 
+        return null
     }
 }
