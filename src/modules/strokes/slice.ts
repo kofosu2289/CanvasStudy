@@ -1,6 +1,7 @@
 import { RootState } from "../../utils/types";
 import { endStroke } from "../sharedActions";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { newProject } from "./api";
 
 const initialState: RootState["strokes"] = [];
 
@@ -25,3 +26,24 @@ export default strokes.reducer;
 export const strokesLengthSelector = (state: RootState) => state.strokes.length;
 
 export const strokesSelector = (state: RootState) => state.strokes;
+
+type SaveProjectArg = {
+  projectName: string;
+  thumbnail: string;
+};
+
+export const saveProject = createAsyncThunk(
+  "SAVE_PROJECT",
+  async ({ projectName, thumbnail }: SaveProjectArg, { getState }) => {
+    try {
+      const response = await newProject(
+        projectName,
+        (getState() as RootState)?.strokes,
+        thumbnail
+      );
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
