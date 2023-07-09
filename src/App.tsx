@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { drawStroke, clearCanvas, setCanvasSize } from "./utils/canvasUtils";
 import { beginStroke, updateStroke } from "./modules/currentStroke/actions";
 import { endStroke } from "./modules/sharedActions";
-import { strokesSelector } from "./modules/strokes/reducer";
+import { strokesSelector } from "./modules/strokes/slice";
 import { currentStrokeSelector } from "./modules/currentStroke/reducer";
 import { historyIndexSelector } from "./modules/historyIndex/slice";
 import { EditPanel } from "./shared/EditPanel";
