@@ -5,7 +5,7 @@ import { beginStroke, updateStroke } from "./modules/currentStroke/actions";
 import { endStroke } from "./modules/sharedActions";
 import { strokesSelector } from "./modules/strokes/reducer";
 import { currentStrokeSelector } from "./modules/currentStroke/reducer";
-import { historyIndexSelector } from "./modules/historyIndex/reducer";
+import { historyIndexSelector } from "./modules/historyIndex/slice";
 import { EditPanel } from "./shared/EditPanel";
 import { ColorPanel } from "./shared/ColorPanel";
 import { FilePanel } from "./shared/FilePanel";
