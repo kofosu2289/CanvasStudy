@@ -6,7 +6,7 @@ const initialState: RootState["historyIndex"] = 0;
 
 export const historyIndex = createSlice({
   name: "historyIndex",
-  initialState: 0,
+  initialState,
   reducers: {
     undo: (state, action: PayloadAction<number>) => {
       return Math.min(state + 1, action.payload);
